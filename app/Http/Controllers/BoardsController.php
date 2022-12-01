@@ -7,16 +7,67 @@ use App\Models\TodoList;
 
 class BoardsController 
 {
+
+    /**
+     * Show all boards
+     */
+
     public function index()
+    {        
+        return Board::all();
+    }
+
+    /**
+     * Show a single board
+     */
+
+    public function show(Board $board) 
     {
-        // $boards = Board::orderBy('name', 'ASC')->get();
+        return $board;
+    }
 
-        // foreach($boards as $board){
-        //     echo "Board name: {$board->name} ";
-        // }
+    /**
+     * Show the form to create a board
+     */
 
-        
+    public function create()
+    {
+
+    }
+
+    /**
+     * Store / create a board
+     */
+
+    public function store(CreateBoardRequest $request)
+    {
         
     }
 
+    /**
+     * Show the edit form 
+     */
+
+    public function edit()
+    {
+
+    }
+
+    /**
+     * Update a board
+     */
+
+    public function update(CreateBoardRequest $request, Board $board)
+    {
+        
+    }
+
+    /**
+     * Delete a board
+     */
+
+    public function delete(Board $board)
+    {
+
+    }
 }
