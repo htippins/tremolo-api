@@ -14,6 +14,7 @@ use App\Http\Controllers\BoardsController;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
