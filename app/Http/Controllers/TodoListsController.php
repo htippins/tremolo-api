@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\TodoList;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-class TodoListsController 
+class TodoListsController extends Controller
 {
 
     /**
@@ -52,14 +53,14 @@ class TodoListsController
 
     public function edit()
     {
-
+        
     }
 
     /**
      * Update a list
      */
 
-    public function update()
+    public function update(CreateTodoListRequest $request, TodoList $todolist)
     {
         
     }
@@ -68,8 +69,8 @@ class TodoListsController
      * Delete a list
      */
 
-    public function delete(TodoList $todolist)
+    public function destroy(TodoList $todolist)
     {
-
+        $todolist->delete();
     }
 }

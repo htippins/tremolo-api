@@ -1,6 +1,8 @@
 <?php
-use App\TodoList;
+use App\Models\TodoList;
 
+use App\Http\Controllers\TodoListsController;
+use App\Http\Controllers\CardsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +17,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('todolists', function(Request $request) {
-    return TodoList::all();
-});
+Route::resource('todolists', TodoListsController::class);
+Route::resource('cards', CardsController::class);
