@@ -13,8 +13,8 @@ class TodoListsController extends Controller
      */
 
     public function index()
-    {        
-        return TodoList::all();
+    {     
+        return TodoList::with('cards')->get();
     }
 
     /**

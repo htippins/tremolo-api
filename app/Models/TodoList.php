@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class TodoList extends Model
 {
-    public $table = 'lists';
+    protected $table = 'lists';
+
+    public function cards(){
+        return $this->hasMany(Card::class, "list_id");
+    }
 }
