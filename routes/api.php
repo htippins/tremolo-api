@@ -3,6 +3,7 @@ use App\Models\TodoList;
 
 use App\Http\Controllers\TodoListsController;
 use App\Http\Controllers\CardsController;
+use App\Http\Controllers\BoardsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('todolists', TodoListsController::class);
 Route::resource('cards', CardsController::class);
+Route::resource('boards', BoardsController::class);
