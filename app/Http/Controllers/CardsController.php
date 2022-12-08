@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use App\Models\Card;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class CardsController extends Controller
 {
@@ -17,8 +18,18 @@ class CardsController extends Controller
 
     }
 
-    public function store(){
+    public function store(Request $request){
 
+        $request->validate([
+            'content' => 'required',
+        ]);
+
+        $card = new Card;
+        $card->content = $request->input('content');
+        $card->list_id = $request->input('list_id');
+        $card->save();
+
+        return $card;
     }
 
     public function edit(){

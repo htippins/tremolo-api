@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use App\Models\TodoList;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Requests;
 use App\Http\Requests\CreateTodoListRequest;
 
 class TodoListsController extends Controller
@@ -50,12 +49,11 @@ class TodoListsController extends Controller
 
         $todolist = new TodoList;
         $todolist->name = $request->input('name');
-        // $todoList->list_order = $count + 1;
+        $todolist->list_order = $count + 1;
         $todolist->board_id = 1;
         $todolist->save();
 
         return $todolist;
-
     }
 
     /**
