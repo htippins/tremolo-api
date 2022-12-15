@@ -40,7 +40,8 @@ class CardsController extends Controller
 
     }
 
-    public function destroy(Card $card) {
+    public function destroy(Card $card) 
+    {
         $card->delete();
 
         return response()->json([

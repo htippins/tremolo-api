@@ -81,5 +81,9 @@ class TodoListsController extends Controller
     public function destroy(TodoList $todolist)
     {
         $todolist->delete();
+
+        return response()->json([
+            'list deleted' => true,
+        ]);
     }
 }
