@@ -83,7 +83,7 @@ class TodoListsController extends Controller
         $todolist->delete();
 
         return response()->json([
-            'list deleted' => true,
+            'list_deleted' => true,
         ]);
     }
 }
